@@ -1,24 +1,51 @@
-# README
+# Potato API Documentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API provides information about potato prices.  
 
-Things you may want to cover:
 
-* Ruby version
+## Endpoints
 
-* System dependencies
+### Daily Prices
 
-* Configuration
+Returns the potato prices for a specific date.  
+  
+- URL: `/api/v1/potato_prices/:date/daily_prices`  
+- Method: GET  
+- URL Params: date=[string] (required)  
+- Success Response:  
+- Code: 200  
+- Content: JSON array of potato prices for the specified date.  
 
-* Database creation
+### Max Potential Gain
 
-* Database initialization
+Returns the maximum potential gain for a specific date.  
+  
+- URL: `/api/v1/potato_prices/:date/max_potential_gain`  
+- Method: GET  
+- URL Params: date=[string] (required)  
+- Success Response:  
+- Code: 200  
+- Content: JSON object with the maximum potential gain for the specified date.  
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Example
 
-* Deployment instructions
+To get the daily prices for potatoes on 2023-11-12, you would use the following URL:  
+  
+`/api/v1/potato_prices/2023-11-12/daily_prices`  
+  
+To get the maximum potential gain for potatoes on 2023-11-12, you would use the following URL:  
+  
+`/api/v1/potato_prices/2023-11-12/max_potential_gain`  
 
-* ...
+
+## Errors
+ 
+If an error occurs, the API will return a JSON object with an error message. The HTTP status code will reflect the type of error.  
+
+
+## Notes
+  
+- The date parameter should be in the format YYYY-MM-DD.  
+- All times are in UTC.  
+- The prices are in Euros (€).
