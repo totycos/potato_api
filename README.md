@@ -49,3 +49,38 @@ If an error occurs, the API will return a JSON object with an error 
 - The date parameter should be in the format YYYY-MM-DD.  
 - All times are in UTC.  
 - The prices are in Euros (€).
+
+
+## Setting Up the Potato API
+
+### 1. Clone the Repository
+
+```shell
+git clone https://github.com/totycos/potato_api.git
+cd potatoes_api
+```
+
+### 2. Install Dependencies
+
+```shell
+bundle install
+```
+
+### 3. Configure the Database
+
+```shell
+rails db:create
+rails db:migrate
+```
+
+### 4. Seed the Database
+
+```shell
+rails db:seed
+```
+
+### 5. Start the Development Server
+
+```shell
+rails server
+```
