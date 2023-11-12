@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Supprime toutes les données existantes dans la table avant d'ajouter de nouvelles données
+PotatoPrice.delete_all
+
+start_date = DateTime.new(2023, 1, 1)
+end_date = DateTime.now
+
+# Itère sur chaque jour entre la date de début et la date de fin
+(start_date..end_date).each do |date|
+  # Itère sur chaque heure de la journée
+  24.times do |hour|
+    # Génère un prix fictif
+    price = rand(100.00..120.00)
+    # Crée un enregistrement dans la table potato_prices avec la date, l'heure et le prix
+    PotatoPrice.create!(
+      time: date + hour.hours,
+      price: price
+    )
+  end
+end
