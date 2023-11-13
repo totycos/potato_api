@@ -20,6 +20,8 @@ class Api::V1::PotatoPricesController < ApplicationController
         end
     end
 
+    gain = gain * 100 # Pour 100 tonnes de patates
+
     render json: { max_gain: "#{gain}€" }
     
   end
